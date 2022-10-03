@@ -10,5 +10,11 @@
   ## Declarative Programming - code that describes the acheivement instead of every step
   
   ## Database Administration
-  ## Clustered Index- 
-  ## Non-Clustered Index- 
+  ## Clustered Index - Records are physically indexed within the table 
+  ## Non-Clustered Index - logical orders do not match the physical state on the disk
+  ## Three Layers of Data Abstraction - 
+  ## A. View (user view) - What the user sees
+  ## B. Logical - the way the information is stored oredered and link
+  ## C. Physical - Physical storage : the disk or device and hardware
+  ## Entity Relationship
+  
