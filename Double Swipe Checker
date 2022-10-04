@@ -1,3 +1,8 @@
+##import Datetime function
+import datetime
+
+x = datetime.datetime.now()
+
 Day/TimeFunction()
  ## variables per day to make the read reuseable
  days = 1:31
@@ -17,6 +22,7 @@ Day/TimeFunction()
       elif day =/= day
       day += 1
         return
+        
 NameFunction()
  ## read name from the date
   membername
@@ -26,6 +32,7 @@ NameFunction()
  ## if no leave it
   elif
       return
+      
 def CalculationFunction()
  ## is the difference greater than 3 hours?
   if x - y > 180
