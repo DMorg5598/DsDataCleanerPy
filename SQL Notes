@@ -1,20 +1,49 @@
   ## Notes
   
-  ## SQL Basics
+  ## SQL BASICS
   ## SQL - Structured Query Language
   ## RDBMS - Relational Database Management System
   ## DDL - Data Definition Language - Create/Alter/Delete Objects
   ## DML - Data Manipulation Language - Insert, Update, Delete data
-  ## DCL - Data Control Language - Control Access
-  ## Select - Select 0 or more rows - 
+  ## DCL - Data Control Language - Control Access 
   ## Declarative Programming - code that describes the acheivement instead of every step
+  ## TSQL (Transact-SQL) - transaction control, exception and error handling, row processing, and declared variables.
   
-  ## Database Administration
+  ## SQL SERVER BASICS
+  
+  ## DATABASE ADMINISTRATION
   ## Clustered Index - Records are physically indexed within the table 
   ## Non-Clustered Index - logical orders do not match the physical state on the disk
   ## Three Layers of Data Abstraction - 
   ## A. View (user view) - What the user sees
   ## B. Logical - the way the information is stored oredered and link
   ## C. Physical - Physical storage : the disk or device and hardware
-  ## Entity Relationship
   
+  ## SQL PROGRAMMING
+  ## SELECT - extracts data from a database.
+  SELECT membership type FROM allmembers
+  SELECT DISTINCT membership type FROM allmembers - only shows unique data from these columns
+  ## UPDATE - updates data in a database.
+  UPDATE allmembers // SET column1 = membership type
+  ## DELETE - deletes data from a database.
+  DELETE FROM allmembers // WHERE membershiptype = "12month"
+  ## INSERT INTO - inserts new data into a database.
+  INSERT INTO allmembers // 
+  ## CREATE DATABASE - creates a new database.
+  ## ALTER DATABASE - modifies a database.
+  ## CREATE TABLE - creates a new table.
+  ## FROM - select table
+  ## WHERE - a clause used to filter data
+  ## AND, NOR, NOT- conditions used with where to filter
+  ## ORDER BY - used to sort 
+  ## INSERT INTO - used to add records to a table or values to i
+  ## VALUES - When inserting, deleting, and updating, use this to add values
+  ## ISNULL, ISNOTNULL - (does not mean number 0) - to check if there is no value present
+  ## SELECT TOP - filter records by value or by percentage
+  SELECT TOP 25 (or) SELECT TOP 10%
+  ## MIN, MAX, AVG, SUM, COUNT - same function as excel but just select column
+  SELECT MIN membershiptype
+  ## LIKE - 
+  ## WILDCARD
+  ## IN
+  ## BETWEEN
