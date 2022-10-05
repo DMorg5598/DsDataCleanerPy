@@ -43,7 +43,13 @@
   SELECT TOP 25 (or) SELECT TOP 10%
   ## MIN, MAX, AVG, SUM, COUNT - same function as excel but just select column
   SELECT MIN membershiptype
-  ## LIKE - 
-  ## WILDCARD
-  ## IN
-  ## BETWEEN
+  ## LIKE - used with where to find a similarity between records
+  ## WILDCARD - used to find a certain similarity between records - used to substitute for another string
+  ## IN - (multiple OR arguments) specify values 
+  ## BETWEEN - specify a range of values
+  ## JOIN - clause is used to combine rows from two or more tables, based on a related column between them
+  ## (INNER) JOIN: Returns records that have matching values in both tables
+  ## LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+  ## RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+  ## FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+  
