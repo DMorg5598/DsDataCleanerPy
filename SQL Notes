@@ -36,7 +36,6 @@
   ## WHERE - a clause used to filter data
   ## AND, NOR, NOT- conditions used with where to filter
   ## ORDER BY - used to sort 
-  ## INSERT INTO - used to add records to a table or values to i
   ## VALUES - When inserting, deleting, and updating, use this to add values
   ## ISNULL, ISNOTNULL - (does not mean number 0) - to check if there is no value present
   ## SELECT TOP - filter records by value or by percentage
