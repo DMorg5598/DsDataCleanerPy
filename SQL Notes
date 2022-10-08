@@ -53,4 +53,5 @@
   ## FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
   ## UNION - combine two or more select statements into one return
   ## GROUP BY - used with aggregate functions to group rows that have similar values
-  
+  ## ANY - returns boolean result if any values meet criteria
+  ## ALL - returns boolean result if all values meet criteria
