@@ -55,3 +55,11 @@
   ## GROUP BY - used with aggregate functions to group rows that have similar values
   ## ANY - returns boolean result if any values meet criteria
   ## ALL - returns boolean result if all values meet criteria
+  
+  ## USING THE WHERE ARGUMENTS
+  SUM/AVG/COUNT- SELECT SUM                  - shows a standard value as an answer, Count Used as CountIf for records while AVG and SUM are used to calculate values
+                 FROM octoberusage
+                 WHERE visits>25
+  MIN/MAX - SELECT MAX(visits) AS MostVisits - must declare a variable, returns a value within that variable. Works by column
+            FROM octberusage
+  
