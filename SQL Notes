@@ -1,6 +1,6 @@
   ## Notes
   
-  SQL BASICS
+  ~~~SQL BASICS~~~
   ## SQL - Structured Query Language
   ## RDBMS - Relational Database Management System
   ## DDL - Data Definition Language - Create/Alter/Delete Objects
@@ -9,9 +9,9 @@
   ## Declarative Programming - code that describes the acheivement instead of every step
   ## TSQL (Transact-SQL) - transaction control, exception and error handling, row processing, and declared variables.
   
-  SQL SERVER BASICS
+  ~~~SQL SERVER BASICS~~~
   
-  DATABASE ADMINISTRATION
+  ~~~DATABASE ADMINISTRATION~~~
   ## Clustered Index - Records are physically indexed within the table 
   ## Non-Clustered Index - logical orders do not match the physical state on the disk
   ## Three Layers of Data Abstraction - 
@@ -19,7 +19,7 @@
   ## B. Logical - the way the information is stored oredered and link
   ## C. Physical - Physical storage : the disk or device and hardware
   
-  ## SQL PROGRAMMING
+  ~~~SQL PROGRAMMING~~~
   ## SELECT - extracts data from a database.
   SELECT membership type FROM allmembers
   SELECT DISTINCT membership type FROM allmembers - only shows unique data from these columns
@@ -59,25 +59,34 @@
   ## CREATE INDEX - creates seperate a duplicate list or index of values from one column
   ## CREATE UNIQUE INDEX - duplicates only unique values to the index
   ## DROP INDEX - removes the index from the table
+  ## CONCAT - adds two strings together
+  ## REPLACE - just like the find and replace function for microsoft office "find x, replace with y"
   
-  USING THE WHERE ARGUMENTS
+  ~~~USING THE WHERE ARGUMENTS~~~
   SUM/AVG/COUNT- SELECT SUM                  - shows a standard value as an answer, Count Used as CountIf for records while AVG and SUM are used to calculate values
                  FROM octoberusage
                  WHERE visits>25
   MIN/MAX - SELECT MAX(visits) AS MostVisits - must declare a variable, returns a value within that variable. Works by column
             FROM octberusage
   
-  INDEXES
+  ~~~INDEXES~~~
   Used to make queries faster. Can be used to make something like a mailing or call list of unique names or values quickly.
   USAGE
      CREATE UNIQUE INDEX ix_membername
      ON octoberusage(membername)
      
-  ADVANCED QUERIES
-  A query that shows the number of orders by shipper
+  ~~~ADVANCED QUERIES~~~
+  1. A query that shows the number of orders by shipper?
   SELECT shippers.shippername                                     - select the column by name
   COUNT (Orders.OrdersID) AS Number of Rows                       - count the number of values and declare a variable for storage
   FROM Orders                                                     - select table by name
   LEFT JOIN Shippers ON Orders.ShipperID = ShipperShippersID      - only count matching variables between orders and shipments
   GROUP BY ShipperName                                            - group the shippers by name on the list
-  
+  2. The number of customers in each country sorted high to low
+  SELECT COUNT (customerid), country                              - select countif per country using this to receive all country values
+  FROM customers                                                  - from the table
+  GROUP BY country                                                - sort the results by country
+  ORDER BY COUNT (CUSTOMER ID) DESC;                              - add all values to make list then order then high to low
+  3. Number of distinct customer countries
+  SELECT COUNT (DISTINCT visits)                                  - select only unique values per this column then only show me how many there are
+  FROM octoberusage                                               - from the table
