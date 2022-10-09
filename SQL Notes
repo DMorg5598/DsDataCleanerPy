@@ -23,6 +23,7 @@
   ## SELECT - extracts data from a database.
   SELECT membership type FROM allmembers
   SELECT DISTINCT membership type FROM allmembers - only shows unique data from these columns
+  ## SELECT INTO - 
   ## UPDATE - updates data in a table
   UPDATE allmembers // SET column1 = membership type
   ## DELETE - deletes data from a table
@@ -34,7 +35,7 @@
   ## ALTER TABLE - makes all changes to the talbes
   ## CREATE TABLE - creates a new table.
   ## FROM - select table
-  ## WHERE - a clause used to filter data
+  ## WHERE - a clause used to filter data. Conditional statement!
   ## AND, NOR, NOT- conditions used with where to filter
   ## ORDER BY - used to sort 
   ## VALUES - When inserting, deleting, and updating, use this to add values
@@ -45,13 +46,13 @@
   SELECT MIN membershiptype
   ## LIKE - used with where to find a similarity between records
   ## WILDCARD - used to find a certain similarity between records - used to substitute for another string
-  ## IN - (multiple OR arguments) specify values 
+  ## IN - (multiple OR arguments) specify values, can be used to copy values into another column
   ## BETWEEN - specify a range of values
   ## JOIN - clause is used to combine rows from two or more tables, based on a related column between them
   ## (INNER) JOIN: Returns records that have matching values in both tables
   ## LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
   ## RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
-  ## FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+  ## FULL (OUTER) JOIN: Returns all records when there is a condition met in either left or right table, regardless if they match each other.
   ## UNION - combine two or more select statements into one return
   ## GROUP BY - used with aggregate functions to group rows that have similar values
   ## ANY - returns boolean result if any values meet criteria
@@ -61,6 +62,10 @@
   ## DROP INDEX - removes the index from the table
   ## CONCAT - adds two strings together
   ## REPLACE - just like the find and replace function for microsoft office "find x, replace with y"
+  ## INSERT INTO - used to copy data from one table or column to another table or database
+  ## CHECK - used to limit the amount of characters or limit value amount per column or per table by other values
+  ## DEFAULT - used to set a default value to a table or column. if no values are entered it will remain this default value
+  ## HAVING - aggregate WHERE function
   
   ~~~USING THE WHERE ARGUMENTS~~~
   SUM/AVG/COUNT- SELECT SUM                  - shows a standard value as an answer, Count Used as CountIf for records while AVG and SUM are used to calculate values
@@ -68,6 +73,7 @@
                  WHERE visits>25
   MIN/MAX - SELECT MAX(visits) AS MostVisits - must declare a variable, returns a value within that variable. Works by column
             FROM octberusage
+  HAVING - 
   
   ~~~INDEXES~~~
   Used to make queries faster. Can be used to make something like a mailing or call list of unique names or values quickly.
@@ -75,7 +81,7 @@
      CREATE UNIQUE INDEX ix_membername
      ON octoberusage(membername)
      
-  ~~~ADVANCED QUERIES~~~
+  ~~~ADVANCED QUERY QUESTIONS~~~
   1. A query that shows the number of orders by shipper?
   SELECT shippers.shippername                                     - select the column by name
   COUNT (Orders.OrdersID) AS Number of Rows                       - count the number of values and declare a variable for storage
@@ -90,3 +96,14 @@
   3. Number of distinct customer countries
   SELECT COUNT (DISTINCT visits)                                  - select only unique values per this column then only show me how many there are
   FROM octoberusage                                               - from the table
+  4. Copy the table using the IN argument into another new table
+  SELECT INTO octoberbackup IN usage.db                           - Copy and paste data from the table to INside the other database
+  FROM octoberusage                                               - from this table
+  5. Use ALL to display all product names
+  SELECT ALL membernames                                          - Select all values in the membernames field
+  FROM octoberusage                                               -from the table named
+  WHERE TRUE                                                      -using a blank true to make all values displayed as they are equal to 1 or valid
+  
+  ~~~WHAT IS CONFUSING?~~~
+  Why is there a period in front of some columns with the table name?
+  Why would you need to use the table name in parenthesis at the end of the statement?
