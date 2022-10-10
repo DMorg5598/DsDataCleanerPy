@@ -68,6 +68,7 @@
   ## HAVING - aggregate WHERE function
   ## PIVOT - the process of converting the data from the row level to the column level.
   ## DROP - used to drop columns i.e. DROP dooraccessed FROM octobervisits
+  ## BEGIN,END used to block code together like writing a function in python
   
   ~~~USING THE WHERE ARGUMENTS~~~
   SUM/AVG/COUNT - SELECT SUM                  - shows a standard value as an answer, Count Used as CountIf for records while AVG and SUM are used to calculate values
