@@ -66,15 +66,21 @@
   ## CHECK - used to limit the amount of characters or limit value amount per column or per table by other values
   ## DEFAULT - used to set a default value to a table or column. if no values are entered it will remain this default value
   ## HAVING - aggregate WHERE function
+  ## PIVOT - the process of converting the data from the row level to the column level.
   
   ~~~USING THE WHERE ARGUMENTS~~~
-  SUM/AVG/COUNT- SELECT SUM                  - shows a standard value as an answer, Count Used as CountIf for records while AVG and SUM are used to calculate values
-                 FROM octoberusage
-                 WHERE visits>25
-  MIN/MAX - SELECT MAX(visits) AS MostVisits - must declare a variable, returns a value within that variable. Works by column
-            FROM octberusage
-  HAVING - 
-  
+  SUM/AVG/COUNT - SELECT SUM                  - shows a standard value as an answer, Count Used as CountIf for records while AVG and SUM are used to calculate values
+                  FROM octoberusage
+                  WHERE visits>25
+                  
+  MIN/MAX       - SELECT MAX(visits) AS MostVisits - must declare a variable, returns a value within that variable. Works by column
+                  FROM octberusage
+  HAVING        - SELECT COUNT visits
+                  FROM octoberusage
+                  WHERE name='morgan' OR 'flores'
+                  HAVING COUNT > 25
+  AND/OR/NOT    - SELECT COUNT
+                  FROM octoberusage AND november usage
   ~~~INDEXES~~~
   Used to make queries faster. Can be used to make something like a mailing or call list of unique names or values quickly.
   USAGE
