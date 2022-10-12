@@ -111,7 +111,10 @@
   SELECT ALL membernames                                          - Select all values in the membernames field
   FROM octoberusage                                               -from the table named
   WHERE TRUE                                                      -using a blank true to make all values displayed as they are equal to 1 or valid
-  
+  7. After trying this insert in I'm recieving the error message below: 
+  Violation of PRIMARY KEY constraint 'PK__#CUSTOME__8CB286B9C0DA6608'. 
+  Cannot insert duplicate key in object 'dbo.#CUSTOMERS'?
+  !! Duplicate keys, this value already exists in this table and cannot exist twice
   ~~~WHAT IS CONFUSING?~~~
   Why is there a period in front of some columns with the table name?
   Why would you need to use the table name in parenthesis at the end of the statement?
