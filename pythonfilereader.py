@@ -31,18 +31,6 @@ print(strikes)
 print("Total visit = ")
 print(totalvisits)
 
-## ATTEMPT 2
-strikes = 0
-totalvisits = 0
-f = open("usage.txt", "r")
-for x in f:
-  visits = x
-  totalvisits += 1
-  print(visits)
-else:
- print("Total visits in this time:")
- print (totalvisits)
-
 ## TEXT FILE
 1, "Cinna Mon", 10/11/2022 15:53:00
 2, "hazel nut", 10/11/2022 16:01:00
