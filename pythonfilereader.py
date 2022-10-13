@@ -31,16 +31,19 @@ print(strikes)
 print("Total visit = ")
 print(totalvisits)
 
-## TEXT FILE
-1, "Cinna Mon", 10/11/2022 15:53:00
-2, "hazel nut", 10/11/2022 16:01:00
-3, "hazel nut", 10/11/2022 16:01:00
-4, "Bay Guette", 10/11/2022 16:04:50
-5, "Francis Toast", 10/11/2022 16:12:22
-6, "Joe Nut", 10/11/2022 16:44:20 
-7, "Joe Nut", 10/11/2022 16:44:20
-8, "Siri Elle", 10/11/2022 17:22:00
-9, "Muf Finn", 10/11/2022 17:25:33
-10, "Bana Anna", 10/11/2022 17:56:48
-11, "Ote Mell", 10/11/2022 18:55:38
-12, "Cinna Mon", 10/11/2022 22:22:33
+## ATTEMPT 2
+import pandas as pd
+namelist = []
+vdf = []
+doublevisits = 0
+udf = pd.read_csv('usage.csv')
+namelist.extend(udf.get("membername"))
+for i in range(len(namelist)):
+  j = i + 1
+  name1 = namelist[i]
+  name2 = namelist[j]
+  if name1 == name2:
+   print("These names match")
+   doublevisits += 1
+print("Double Visits:")
+print(doublevisits)
