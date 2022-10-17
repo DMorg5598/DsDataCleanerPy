@@ -1,4 +1,3 @@
-## ATTEMPT 1
 ## THIS FUNCTION WILL READ FOB SWIPES AND DETERMINE IF THEY ARE WITHIN THREE HOURS OF EACH OTHER
 ## the name function determines if the names match
 def namefunction(member1,member2):
@@ -24,14 +23,15 @@ newudf = udf.sort_values("membername")
 visitidlist.extend(newudf.get("visitid"))
 ## take the column membername and store each name in a list called "namelist"
 namelist.extend(newudf.get("membername"))
-lastperson = namelist[0]
+lastperson = namelist[-1]
 ## take the visit column and store each time in a list called "visitlist"
 visitlist.extend(newudf.get("visittime"))
-lastvisit = visitlist[0]
+lastvisit = visitlist[-1]
 ## set the loop stop to the list length, then loop through the list
 totalvisits = max(visitidlist)
 i = 0
 while i < len(visitidlist):
+    visitidnum = visitidlist[i]
     name1 = namelist[i]
     name2 = lastperson
     time1 = visitlist[i]
@@ -41,7 +41,7 @@ while i < len(visitidlist):
     if namefunction(name1,name2) == True:
 ## if the times also match, count it as a double swipe
         if timefunction(time1,time2) == True:
-            print("this is a doubleswipe")
+            print("visit id #",visitidnum,"is a doubleswipe")
             doubleswipes += 1
             lastvisit = time1
     lastperson = name1
