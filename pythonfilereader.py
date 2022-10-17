@@ -45,4 +45,5 @@ while i < len(visitidlist):
             doubleswipes += 1
             lastvisit = time1
     lastperson = name1
-print(dsmessage,doubleswipes)
+print("Total visits in this time:",totalvisits)
+print("Total double swipes in this time:",doubleswipes)
