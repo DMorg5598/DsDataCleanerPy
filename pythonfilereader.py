@@ -5,7 +5,7 @@ def namefunction(member1,member2):
         return True
 ## the time function determines if the visits are within three hours of each other
 def timefunction(visit1, visit2):
-    if visit1 - visit2 < 240:
+    if visit2 - visit1 < 240 and visit1 - visit2 < 240:
         return True
 ## take data and store it in a dataframe as "usagedataframe"
 import pandas as pd
@@ -39,12 +39,10 @@ while i < len(visitidlist):
     i += 1
 ## if the names match, continue to the time function
     if namefunction(name1,name2) == True:
-## if the times also match, count it as a double swipe
+## if the times also match, count it as a double swipe and delete the record from the appropriate list
         if timefunction(time1,time2) == True:
             print("visit id #",visitidnum,"is a doubleswipe")
             doubleswipes += 1
-        else:
-            print(i,"this is a double swipe")
     lastvisit = time1
     lastperson = name1
 print("Total visits in this time:",totalvisits)
