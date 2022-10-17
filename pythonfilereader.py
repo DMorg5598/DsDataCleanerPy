@@ -5,7 +5,7 @@ def namefunction(member1,member2):
         return True
 ## the time function determines if the visits are within three hours of each other
 def timefunction(visit1, visit2):
-    if visit1 - visit2 < 180  or visit2 - visit1 < 180:
+    if visit1 - visit2 < 180:
         return True
 ## take data and store it in a dataframe as "usagedataframe"
 import pandas as pd
