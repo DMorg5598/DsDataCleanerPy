@@ -42,8 +42,35 @@ while i < len(visitidlist):
 ## if the times also match, count it as a double swipe and delete the record from the appropriate list
         if timefunction(time1,time2) == True:
             print("visit id #",visitidnum,"is a doubleswipe")
+            doubleswipelist.append(visitidnum)
             doubleswipes += 1
     lastvisit = time1
     lastperson = name1
+    if i == len(visitidlist):
+        break
+
+## clear the invalid data from the dataframe and lists respectively
+cleanudf = newudf.drop(doubleswipelist)
+namelist.clear()
+visitlist.clear()
+## then add the names and the cleaned counts to a new dataframe
+namelist.extend(cleanudf.get("membername"))
+visitcounts = []
+for a in namelist:
+    b = namelist.count(a)
+    visitcounts.append(b)
+g = 0
+while g < len(visitcounts):
+    counts = {
+        "names": [(namelist[g])],
+        "counts": [(visitcounts[g])]
+    }
+    g += 1
+finaldf = pd.DataFrame(counts)
+## sort the dataframe by visits
+final2df = finaldf.sort_values("counts")
+## print the total visits in this time, then the total doubleswipes
 print("Total visits in this time:",totalvisits)
 print("Total double swipes in this time:",doubleswipes)
+# print the top 28 list
+print(final2df)
