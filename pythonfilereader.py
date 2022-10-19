@@ -57,18 +57,20 @@ namelist.extend(cleanudf.get("membername"))
 visitcounts = []
 e = 0
 for a in namelist:
-    b = namelist.count(a)
+    visitcounts.append(namelist.count(a))
     e += 1
     if e == len(namelist):
         break
-visitcounts.append(b)
-g = 0
-counts = dict.fromkeys(visitcounts,namelist)
-finaldf = pd.DataFrame(counts)
-## sort the dataframe by visits
-
+f = 0
+visittotals = {
+    'names':namelist,
+    'visits':visitcounts
+}
+finaldf = pd.DataFrame(visittotals)
+finaldf2 = finaldf.drop_duplicates(subset="names")
+finaldf3 = finaldf2.sort_values("visits",ascending=False)
 ## print the total visits in this time, then the total doubleswipes
 print("Total visits in this time:",totalvisits)
 print("Total double swipes in this time:",doubleswipes)
 # print the top 28 list
-print(finaldf)
+print(finaldf3)
