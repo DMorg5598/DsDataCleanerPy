@@ -73,4 +73,4 @@ finaldf3 = finaldf2.sort_values("visits",ascending=False)
 print("Total visits in this time:",totalvisits)
 print("Total double swipes in this time:",doubleswipes)
 # print the top 28 list
-print(finaldf3)
+print(finaldf3.head(28))
