@@ -61,7 +61,6 @@ for a in namelist:
     e += 1
     if e == len(namelist):
         break
-f = 0
 visittotals = {
     'names':namelist,
     'visits':visitcounts
